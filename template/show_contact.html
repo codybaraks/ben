@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<!--nav sect-->
+
+<!--form sect-->
+<div class="container">
+    <table class="table" id="example">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ben in bens %}
+        <tr>
+            <td>{{ ben[0] }}</td>
+            <td>{{ ben[1] }}</td>
+            <td>{{ ben[2] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+ <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+</body>
+</html>
